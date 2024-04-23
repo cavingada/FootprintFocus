@@ -1,14 +1,19 @@
 {
   "name": "footprintfocus",
   "version": "1.0.0",
-  "description": "",
+  "description": "CS 545 Final Project",
   "main": "app.js",
+  "type": "module",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "author": "Cavin Gada & Yash Sharma",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2"
+  }
 }

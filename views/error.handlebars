@@ -1,9 +1,14 @@
-{{!--
+{{!
+You can use this template to render any errors on your site if you wish
+}}
 
-You can use this if they try to access a route that they should not be able to. You will redirect them here. For
-example, if they go to /protected without being logged in, or they try to access /admin without beinging logged in or
-they are not an admin user.
-
---}}
-
-<h1>Error: {{error}}</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error</title>
+    <link rel="stylesheet" href="/public/site.css">
+</head>
+<body>
+    <p class="error">{{error}}</p>
+</body>
+</html>
