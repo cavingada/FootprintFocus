@@ -1,15 +1,3 @@
-<!-- 
-This handlebar file will be rendered when the following route is hit: GET http://localhost:3000/
- 
- The title of the document should be "Marvel Character Finder". You should have the title set as the <title> element of the HTML document and as an h1 in your document.
-
-Your page should reference a CSS file, /public/site.css; this file should have at least 10 rulesets you must use at least 5 of them on this page. 
-
-You should have a main element, and inside of the main element have a p element with a brief (2-3 sentence description) of what your website does.
-
-Also inside the main element, you will have a form; this form will POST to /searchmarvelcharacters. This form will have an input and a label; You will give the input and name AND id of "searchCharacterByName".  The label should properly reference the same id as the input. You should also have a input with a type of submit that submits the form. 
- -->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,15 +6,36 @@ Also inside the main element, you will have a form; this form will POST to /sear
 </head>
 <body>
     <header>
-        <h1>Footprint Calculator</h1>
+        <h2>Footprint Calculator</h2>
     </header>
     <main>
-        <p>This website allows you to calculate your carbon footprint and compare it against others in the world.</p>
-        <form action="/searchmarvelcharacters" method="POST" class="new-char-form">
-            <label for="searchCharacterByName">Search by Name:</label>
-            <input type="text" id="searchCharacterByName" name="searchCharacterByName" class="full-width-input">
-            <input type="submit" value="Search">
+        <p>This website allows you to calculate your carbon footprint today and compare it against others in the world.</p>
+        <form action="/calculate" method="POST" class="calculator-form">
+        <form id="calculator-form">
+        <label for="electric-bill">Monthly Electric Bill ($):</label>
+        <input type="number" id="electric_bill" name="electric_bill" step="0.01" required><br>
+
+        <label for="gas-bill">Monthly Gas Bill ($):</label>
+        <input type="number" id="gas_bill" name="gas_bill" step="0.01" required><br>
+
+        <label for="car-mileage">Distance Driven in the Past 24 Hours:</label>
+        <input type="number" id="car_mileage" name="car_mileage" required><br>
+
+        <label for="short-flights">Did you take a short flight today (4 hours or less):</label>
+        <input type="checkbox" id="short_flight" name="short_flight" ><br>
+
+        <label for="long-flights">Did you take a long flight today (4 hours or more):</label>
+        <input type="checkbox" id="long_flight" name="long_flight" ><br>
+
+        <label for="recycle-newspaper">Do you recycle newspaper?</label>
+        <input type="checkbox" id="recycle_newspaper" name="recycle_newspaper"><br>
+
+        <label for="recycle-aluminum-tin">Do you recycle aluminum and tin?</label>
+        <input type="checkbox" id="recycle_aluminum" name="recycle_aluminum"><br>
+
+        <button type="submit">Calculate</button>
         </form>
+        
     </main>
 </body>
 </html>
