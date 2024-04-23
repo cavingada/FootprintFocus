@@ -1,4 +1,3 @@
-//import express and express router as shown in lecture code and worked in previous labs.  Import your data functions from /data/characters.js that you will call in your routes below
 import { Router } from 'express';
 
 const router = Router();
@@ -6,8 +5,11 @@ import { calculate } from '../data/calculations.js';
 import { checkNumberField, checkIfPositive, checkCheckBox } from '../utils/utils.js';
 
 router.route('/').get(async (req, res) => {
-  //code here for GET will render the home handlebars file
     res.render('home');
+});
+
+router.route('/calculate').get(async (req, res) => {
+    res.redirect('/');
 });
 
 router.route('/calculate').post(async (req, res) => {
@@ -21,6 +23,7 @@ router.route('/calculate').post(async (req, res) => {
   let recycle_a = req.body.recycle_aluminum;
 
   // validation of inputs using helper functions from utils.js  
+  
   try{
 
     electric = await checkNumberField(electric, 'Electric Bill');
@@ -37,11 +40,25 @@ router.route('/calculate').post(async (req, res) => {
     // print
     // console.log(electric, gas, car, s_flight, l_flight, recycle_n, recycle_a);
     const carbon = await calculate(electric, gas, car, s_flight, l_flight, recycle_n, recycle_a);
-    res.render('results', {carbon: carbon});
+    let average = 87.61;
+    let isLessThanAverage = carbon < average;
+    let amount;
+    if (isLessThanAverage)  {
+      amount = average - carbon;
+    }
+    else {
+      amount = carbon - average;
+    }
+
+    //round to 2 decimal places
+    amount = amount.toFixed(2);
+
+    // Pass `isLessThanAverage` to your template
+    res.render('results', { carbon, isLessThanAverage, amount });
   }
   catch (e) {
     console.log(e);
-    res.status(e[0]).render('error', {error: e[1]});
+    res.status(e[0]).render('home', {error: e[1]});
   }
 });
 

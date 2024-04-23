@@ -1,98 +1,154 @@
-/*This file should have 10 CSS rulesets */
-
-* {
-	box-sizing: border-box;
-}
-
-
-html,
-body {
-	font-size: 14pt;
-}
-
-body {
-	background: #dedede;
-	font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-}
-
-main {
-	max-width: 75%;
-	margin: auto;
-}
+/* Reset styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
 
 header {
-	border-bottom: 1px solid #afafaf;
+    text-align: center;
+	font-size: 1.5em;
+}
+footer {
+    text-align: center;
+    margin-top: 20px; /* Adjust as needed */
+	font-size: 0.8em;
+}
+html, body, h1, h2, p, ul, ol, li, button {
+    margin: 10;
 }
 
-h1,
-h2{
-	color: #222;
-	margin-bottom: 5px;
-}
-
-h1 {
-	font-size: 2rem;
-	text-decoration: underline;
+body {
+    font-family: 'Poppins', sans-serif;
+	background-color: rgba(255, 255, 255, 1);
+	background-image: url('earth_image.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+	font-size: 1.5em;
 }
 
 h2 {
-	font-size: 1.5rem;
+	font-size: .6 em;
 }
 
-p {
-	font-size: 1rem;
-	line-height: 2;
-	font-style: italic;
+main {
+    max-width: 800px;
+    margin: 20px auto; /* Added margin for centering */
+    padding: 10;
+}
+
+article {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: black;
+    text-shadow: -1px -1px 0 #fff,  
+                 1px -1px 0 #fff,
+                 -1px 1px 0 #fff,
+                 1px 1px 0 #fff;
+}
+
+#tagline {
+	color: black;
+    text-shadow: -1px -1px 0 #fff,  
+                 1px -1px 0 #fff,
+                 -1px 1px 0 #fff,
+                 1px 1px 0 #fff;
+}
+
+#thanks {
+	color: black;
+    text-shadow: -1px -1px 0 #fff,  
+                 1px -1px 0 #fff,
+                 -1px 1px 0 #fff,
+                 1px 1px 0 #fff;
+    font-weight: bold;
 }
 
 a {
-	margin-bottom: 5px;
-	color: rgb(22, 129, 129)
+    color: #007bff;
+    text-decoration: none;
 }
-li {
-	list-style-type: lower-greek;
+
+a:hover {
+    text-decoration: underline;
 }
-img {
-    width: 50%;
-    height: auto;
-    border-radius: 5px;
+
+.input-container {
+    margin-bottom: 20px; /* Added margin between input containers */
+}
+
+.input-container label {
+    margin-right: 10px; /* Added margin between label and input */
+}
+
+.input-container button {
+    margin-left: 10px; /* Adjusted margin for help button */
+}
+
+button[type="submit"] {
+    margin-top: 20px; /* Added margin above the submit button */
+}
+.calculator-form {
+    background-color:rgba(255, 255, 255, 0.5); 
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    font-weight: bold;
 }
 
-.not-found {
-	text-align: center;
-	font-size: 2rem;
+.calculate-button {
+	font-family: 'Poppins', sans-serif;
+    padding: 10px 20px; /* Adjust padding to make the button bigger */
+    font-size: 20px; /* Adjust font size to make the button bigger */
+    border-radius: 5px; /* Add some border radius for a rounded appearance */
+    background-color: #ffffff; /* Button background color */
+    color: #000000; /* Button text color */
+    border: none; /* Remove button border */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
 	font-weight: bold;
-	color: #e71111;
 }
+
+.calculate-button:hover {
+    background-color: #0056b3; /* Change background color on hover */
+}
+
+
+
+#fcalc {
+	background-color:rgba(255, 255, 255, 0.5); 
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+	text-align: center;
+}
+
 .char {
-	width: 75%;
-	border-bottom: 1px dashed #333;
-}
-
-.new-char-form .full-width-input {
-	display: block;
-	min-height: 3em;
-	margin: 10px 0;
-	width: 100%;
-}
-
-label {
-	font-weight: bold;
-}
-
-.error {
-	color: #e01313;
-	font-size: 2rem;
-	font-weight: bold;
-}
-
-footer {
-	border-top: 1px solid #afafaf;
 	text-align: center;
-	padding: 10px 0;
 }
 
-nav {
-	margin: 10px 0;
+
+#error {
+    background-color:rgba(255, 255, 255, 0.75); 
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    color: red; /* Added text color */
+    font-weight: bold;
+}
+
+.input-container input[type="checkbox"] {
+    transform: scale(1.5); /* Increase the size of the checkbox */
+    margin-right: 10px; /* Add some spacing between checkbox and label */
 }

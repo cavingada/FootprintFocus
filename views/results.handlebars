@@ -3,18 +3,77 @@
 <head>
     <title>Results</title>
     <link rel="stylesheet" type="text/css" href="/public/site.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body>
     <main>
+        <article class="chart-container">
+            <canvas id="carbonChart" width="400" height="300"></canvas>
+        </article>
         <article class="char">
-        <h1>Your Carbon Offset for Today:</h1>
-
-        
-            <h2>{{carbon}} pounds.</h2>
-
-            <a href="/">Calculate Offset Again</a>
-    
+            <h1>Your Carbon Offset for Today:</h1>
+            <h2>
+                {{#if isLessThanAverage}}
+                    <span style="color: green;">{{carbon}}</span>
+                {{else}}
+                    <span style="color: red;">{{carbon}}</span>
+                {{/if}}
+                pounds of CO2.
+            </h2>
+            {{#if isLessThanAverage}}
+                <h2>Congratulations! Your carbon footprint is <span style="color: green;">{{amount}}</span> pounds less than the average American. Come back tomorrow to see if you can keep the streak going!</h2>
+            {{else}}
+                <h2>Unfortunately, your carbon footprint is <span style="color: red;">{{amount}}</span> pounds greater than the average American. Try some of these <a href="https://sustainability.georgetown.edu/community-engagement/things-you-can-do/">methods</a> to reduce your carbon offset and come back tomorrow to see their effect!</h2>
+            {{/if}}
+            <h2>The average American produces 87.61 pounds of CO2 per day. Click <a href="https://scied.ucar.edu/learning-zone/climate-solutions/carbon-footprint">here</a> to find out more.</h2>
+            <h2>People around the world produce 25.74 pounds of CO2 per day. See <a href="https://www.iea.org/commentaries/the-world-s-top-1-of-emitters-produce-over-1000-times-more-co2-than-the-bottom-1">here</a> to learn more.</h2>
+            <a href="/">Calculate Your Offset Again!</a>
         </article>
     </main>
+
+    <script>
+        // Get the canvas element
+        var ctx = document.getElementById('carbonChart').getContext('2d');
+        // Define the data
+        var data = {
+            labels: ['Your Carbon Footprint', 'Average American', 'Average World Citizen'],
+            datasets: [{
+                label: 'Carbon Footprint (lbs of CO2)',
+                data: [{{carbon}}, 87.61, 25.74],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)', // Red for user
+                    'rgba(54, 162, 235, 0.5)',  // Blue for average American
+                    'rgba(255, 206, 86, 0.5)'   // Yellow for average world citizen
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+        
+        // Define the options
+        var options = {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        };
+        
+        // Create the bar chart
+        var carbonChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+    </script>
 </body>
 </html>
+
+
