@@ -1,0 +1,15 @@
+{{!--
+
+If the user is logged in , and 'GET /protected' endpoint is called, you will render this view based on the specs.
+
+--}}
+
+<h1>Welcome {{firstName}} {{lastName}}</h1>
+<p>The time is now: {{currentTime}}.</p>
+<p>Your role in the system is: {{role}}.</p>
+
+{{#if isAdmin}}
+<a href="/admin">Go to Admin Page</a>
+{{/if}}
+
+<a href="/logout">Logout</a>

@@ -1,0 +1,30 @@
+{{! This will be your default layout for all handlebars file rendered. This will be inherited by all other templates. }}
+{{! Refer lecture code to learn more on how this works
+don't forget to include your css and your client-side script file references in the layout.
+}}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>User Interactive Webpage!</title>
+    <link rel="stylesheet" href="../../public/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <p>User Interactive Webpage!</p>
+    </header>
+    <p>This is a website on which you can register, login to check your role, and not much more!</p>
+    <main>
+        <p id="error" class="error" hidden>I'm an error. I will change through Client-Side JS</p>
+        {{{body}}}
+    </main>
+    <footer>Thanks for using our site!</footer>
+
+<script type="module" src='../../public/js/client_side_validation.js'></script>
+
+</body>
+</html>
+
