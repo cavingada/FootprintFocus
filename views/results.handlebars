@@ -3,33 +3,39 @@
 <head>
     <title>Results</title>
     <link rel="stylesheet" type="text/css" href="/public/site.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>    
+    <p><a href="/">Home</a></p>
 </head>
 <body>
-    <main>
-        <article class="chart-container">
-            <canvas id="carbonChart" width="400" height="300"></canvas>
-        </article>
-        <article class="char">
-            <h1>Your Carbon Offset for Today:</h1>
-            <h2>
+    <header>
+        <h1 id="title">Footprint Focus</h1>
+        <p id="tagline">Help save the environment.</p>
+    </header>
+    <main id="results">
+        <div id="results-container">
+            <article class="chart-container">
+                <canvas id="carbonChart" width="300" height="400"></canvas>
+            </article>
+            <article class="char">
+                <h1>Your Carbon Offset for Today:</h1>
+                <h2>
+                    {{#if isLessThanAverage}}
+                        <span style="color: green;">{{carbon}}</span>
+                    {{else}}
+                        <span style="color: red;">{{carbon}}</span>
+                    {{/if}}
+                    pounds of CO2.
+                </h2>
                 {{#if isLessThanAverage}}
-                    <span style="color: green;">{{carbon}}</span>
+                    <h2>Congratulations! Your carbon footprint is <span style="color: green;">{{amount}}</span> pounds less than the average American. Come back tomorrow to see if you can keep the streak going!</h2>
                 {{else}}
-                    <span style="color: red;">{{carbon}}</span>
+                    <h2>Unfortunately, your carbon footprint is <span style="color: red;">{{amount}}</span> pounds greater than the average American. Try some of these <a href="https://sustainability.georgetown.edu/community-engagement/things-you-can-do/">methods</a> to reduce your carbon offset and come back tomorrow to see their effect!</h2>
                 {{/if}}
-                pounds of CO2.
-            </h2>
-            {{#if isLessThanAverage}}
-                <h2>Congratulations! Your carbon footprint is <span style="color: green;">{{amount}}</span> pounds less than the average American. Come back tomorrow to see if you can keep the streak going!</h2>
-            {{else}}
-                <h2>Unfortunately, your carbon footprint is <span style="color: red;">{{amount}}</span> pounds greater than the average American. Try some of these <a href="https://sustainability.georgetown.edu/community-engagement/things-you-can-do/">methods</a> to reduce your carbon offset and come back tomorrow to see their effect!</h2>
-            {{/if}}
-            <h2>The average American produces 87.61 pounds of CO2 per day. Click <a href="https://scied.ucar.edu/learning-zone/climate-solutions/carbon-footprint">here</a> to find out more.</h2>
-            <h2>People around the world produce 25.74 pounds of CO2 per day. See <a href="https://www.iea.org/commentaries/the-world-s-top-1-of-emitters-produce-over-1000-times-more-co2-than-the-bottom-1">here</a> to learn more.</h2>
-            <a href="/">Calculate Your Offset Again!</a>
-        </article>
+                <h2>The average American produces 87.61 pounds of CO2 per day. Click <a href="https://scied.ucar.edu/learning-zone/climate-solutions/carbon-footprint">here</a> to find out more.</h2>
+                <h2>People around the world produce 25.74 pounds of CO2 per day. See <a href="https://www.iea.org/commentaries/the-world-s-top-1-of-emitters-produce-over-1000-times-more-co2-than-the-bottom-1">here</a> to learn more.</h2>
+                <a href="/">Calculate Your Offset Again!</a>
+            </article>
+        </div>
     </main>
 
     <script>

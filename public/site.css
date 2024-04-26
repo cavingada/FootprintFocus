@@ -27,12 +27,18 @@ body {
 h2 {
 	font-size: .6 em;
 }
-
-main {
-    max-width: 800px;
+#results {
+    max-width: 1500px;
     margin: 20px auto; /* Added margin for centering */
     padding: 10;
 }
+#input-form {
+    max-width: 800px;
+    margin: 20px auto; /* Added margin for centering */
+    padding: 10;
+
+}
+
 
 article {
     background-color: #fff;
@@ -133,7 +139,8 @@ button[type="submit"] {
 }
 
 .char {
-	text-align: center;
+    background-color: rgba(255, 255, 255, 0.75);
+	text-align: center;   
 }
 
 
@@ -152,3 +159,20 @@ button[type="submit"] {
     transform: scale(1.5); /* Increase the size of the checkbox */
     margin-right: 10px; /* Add some spacing between checkbox and label */
 }
+
+
+#results-container {
+    display: flex;
+    justify-content: space-around; /* This will space out the articles evenly */
+    align-items: flex-start; /* This aligns items to the top */
+}
+article {
+    flex: 1 1 0; /* Flex-grow, flex-shrink, and flex-basis */
+    margin: 10px; /* Optional: adds some space around each article */
+}
+.chart-container {
+    min-width: 300px; /* Minimum width of the chart container */
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+
