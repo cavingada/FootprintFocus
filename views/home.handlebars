@@ -28,45 +28,52 @@
         <form id="calculator-form">
             <p>Calculate your carbon footprint today and compare it against others in the world.</p>
             <div class="input-container">
-                <label for="electric-bill">Monthly Electric Bill ($):</label>
+                <label for="electric_bill">Monthly Electric Bill ($):</label>
                 <input type="number" id="electric_bill" name="electric_bill" step="0.01" required><br>
-                <button type="button" class="help-button" onclick="showHelp('electric_bill')">?</button>
+                <label for="help1"></label>
+                <button type="button" id="help1" class="help-button" onclick="showHelp('electric_bill')">?</button>
             </div><br>
 
             <div class="input-container">
-                <label for="gas-bill">Monthly Gas Bill ($):</label>
+                <label for="gas_bill">Monthly Gas Bill ($):</label>
                 <input type="number" id="gas_bill" name="gas_bill" step="0.01" required><br>
-                <button type="button" class="help-button" onclick="showHelp('gas_bill')">?</button>
+                <label for="help2"></label>
+                <button type="button" id="help2" class="help-button" onclick="showHelp('gas_bill')">?</button>
             </div><br>
 
             <div class="input-container">
-                <label for="car-mileage">Miles Driven in the Past 24 Hours:</label>
+                <label for="car_mileage">Miles Driven in the Past 24 Hours:</label>
                 <input type="number" id="car_mileage" name="car_mileage" required><br>
-                <button type="button" class="help-button" onclick="showHelp('car_mileage')">?</button>
+                <label for="help3"></label>
+                <button type="button" id="help3" class="help-button" onclick="showHelp('car_mileage')">?</button>
             </div><br>
 
             <div class="input-container">
-                <label for="short-flights">Did you take a short flight today? (4 hours or less):</label>
-                <input type="checkbox" id="short_flight" name="short_flight" ><br>
-                <button type="button" class="help-button" onclick="showHelp('short_flight')">?</button>
+                <label for="short_flight">Did you take a short flight today? (4 hours or less):</label>
+                <input type="checkbox" id="short_flight" name="short_flight">
+                <label for="help4"></label>
+                <button type="button" id="help4" class="help-button" onclick="showHelp('short_flight')">?</button>
             </div><br>
 
             <div class="input-container">
-                <label for="long-flights">Did you take a long flight today? (4 hours or more):</label>
-                <input type="checkbox" id="long_flight" name="long_flight" ><br>
-                <button type="button" class="help-button" onclick="showHelp('long_flight')">?</button>
+                <label for="long_flight">Did you take a long flight today? (4 hours or more):</label>
+                <input type="checkbox" id="long_flight" name="long_flight" >
+                <label for="help5"></label>
+                <button type="button" id="help5" class="help-button" onclick="showHelp('long_flight')">?</button>
             </div><br>
 
             <div class="input-container">
-                <label for="recycle-newspaper">Do you recycle newspaper?</label>
-                <input type="checkbox" id="recycle_newspaper" name="recycle_newspaper"><br>
-                <button type="button" class="help-button" onclick="showHelp('recycle_newspaper')">?</button>
+                <label for="recycle_newspaper">Do you recycle newspaper?</label>
+                <input type="checkbox" id="recycle_newspaper" name="recycle_newspaper">
+                <label for="help6"></label>
+                <button type="button" id="help6" class="help-button" onclick="showHelp('recycle_newspaper')">?</button>
             </div><br>
 
             <div class="input-container">
-                <label for="recycle-aluminum-tin">Do you recycle aluminum and tin?</label>
-                <input type="checkbox" id="recycle_aluminum" name="recycle_aluminum"><br>
-                <button type="button" class="help-button" onclick="showHelp('recycle_aluminum')">?</button>
+                <label for="recycle_aluminum">Do you recycle aluminum and tin?</label>
+                <input type="checkbox" id="recycle_aluminum" name="recycle_aluminum">
+                <label for="help7"></label>
+                <button type="button" id="help7" class="help-button" onclick="showHelp('recycle_aluminum')">?</button>
             </div><br>
             <button type="submit" class="calculate-button">Calculate</button>
         </form>
