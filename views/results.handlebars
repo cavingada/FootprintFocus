@@ -19,17 +19,13 @@
             <article class="char">
                 <h1>Your Carbon Offset for Today:</h1>
                 <h2>
-                    {{#if isLessThanAverage}}
-                        <span style="color: green;">{{carbon}}</span>
-                    {{else}}
-                        <span style="color: red;">{{carbon}}</span>
-                    {{/if}}
+                    {{carbon}}
                     pounds of CO2.
                 </h2>
                 {{#if isLessThanAverage}}
-                    <h2>Congratulations! Your carbon footprint is <span style="color: green;">{{amount}}</span> pounds less than the average American. Come back tomorrow to see if you can keep the streak going!</h2>
+                    <h2>Congratulations! Your carbon footprint is {{amount}} pounds less than the average American. Come back tomorrow to see if you can keep the streak going!</h2>
                 {{else}}
-                    <h2>Unfortunately, your carbon footprint is <span style="color: red;">{{amount}}</span> pounds greater than the average American. Try some of these <a href="https://sustainability.georgetown.edu/community-engagement/things-you-can-do/">methods</a> to reduce your carbon offset and come back tomorrow to see their effect!</h2>
+                    <h2>Unfortunately, your carbon footprint is {{amount}} pounds greater than the average American. Try some of these <a href="https://sustainability.georgetown.edu/community-engagement/things-you-can-do/">methods</a> to reduce your carbon offset and come back tomorrow to see their effect!</h2>
                 {{/if}}
                 <h2>The average American produces 87.61 pounds of CO2 per day. Click <a href="https://scied.ucar.edu/learning-zone/climate-solutions/carbon-footprint">here</a> to find out more.</h2>
                 <h2>People around the world produce 25.74 pounds of CO2 per day. See <a href="https://www.iea.org/commentaries/the-world-s-top-1-of-emitters-produce-over-1000-times-more-co2-than-the-bottom-1">here</a> to learn more.</h2>

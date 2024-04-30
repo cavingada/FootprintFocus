@@ -30,43 +30,36 @@
             <div class="input-container">
                 <label for="electric-bill">Monthly Electric Bill ($):</label>
                 <input type="number" id="electric_bill" name="electric_bill" step="0.01" required><br>
-                <button type="button" class="help-button" onclick="showHelp('electric_bill')">?</button>
             </div><br>
 
             <div class="input-container">
                 <label for="gas-bill">Monthly Gas Bill ($):</label>
                 <input type="number" id="gas_bill" name="gas_bill" step="0.01" required><br>
-                <button type="button" class="help-button" onclick="showHelp('gas_bill')">?</button>
             </div><br>
 
             <div class="input-container">
                 <label for="car-mileage">Miles Driven in the Past 24 Hours:</label>
                 <input type="number" id="car_mileage" name="car_mileage" required><br>
-                <button type="button" class="help-button" onclick="showHelp('car_mileage')">?</button>
             </div><br>
 
             <div class="input-container">
                 <label for="short-flights">Did you take a short flight today? (4 hours or less):</label>
                 <input type="checkbox" id="short_flight" name="short_flight" ><br>
-                <button type="button" class="help-button" onclick="showHelp('short_flight')">?</button>
             </div><br>
 
             <div class="input-container">
                 <label for="long-flights">Did you take a long flight today? (4 hours or more):</label>
                 <input type="checkbox" id="long_flight" name="long_flight" ><br>
-                <button type="button" class="help-button" onclick="showHelp('long_flight')">?</button>
             </div><br>
 
             <div class="input-container">
                 <label for="recycle-newspaper">Do you recycle newspaper?</label>
                 <input type="checkbox" id="recycle_newspaper" name="recycle_newspaper"><br>
-                <button type="button" class="help-button" onclick="showHelp('recycle_newspaper')">?</button>
             </div><br>
 
             <div class="input-container">
                 <label for="recycle-aluminum-tin">Do you recycle aluminum and tin?</label>
                 <input type="checkbox" id="recycle_aluminum" name="recycle_aluminum"><br>
-                <button type="button" class="help-button" onclick="showHelp('recycle_aluminum')">?</button>
             </div><br>
             <button type="submit" class="calculate-button">Calculate</button>
         </form>
@@ -74,46 +67,5 @@
             <p id="error" class="error">ERROR: {{error}}</p>
         {{/if}}
     </main>
-    <!-- JavaScript function to handle the help button functionality -->
-    <script>
-        function showHelp(fieldId) {
-            let helpText = "";
-            switch (fieldId) {
-                case 'electric_bill':
-                    helpText = "Enter the amount of your monthly electric bill in dollars. This includes the total amount you pay for electricity each month.";
-                    break;
-                case 'gas_bill':
-                    helpText = "Enter the amount of your monthly gas bill in dollars. This includes the total amount you pay for natural gas or other fuel sources used for heating, cooking, or other purposes.";
-                    break;
-                case 'car_mileage':
-                    helpText = "Enter the total distance you've driven in the past 24 hours in miles. This includes the total mileage accumulated by your vehicle.";
-                    break;
-                case 'short_flight':
-                    helpText = "Check this box if you've taken a short flight today, defined as a flight lasting 4 hours or less. These typically consist of mostly domestic flights.";
-                    break;
-                case 'long_flight':
-                    helpText = "Check this box if you've taken a long flight today, defined as a flight lasting more than 4 hours. These typically consist of international flights or long-haul flights.";
-                    break;
-                case 'recycle_newspaper':
-                    helpText = "Check this box if you recycle newspaper regularly. Recycling newspaper helps reduce waste and conserve resources.";
-                    break;
-                case 'recycle_aluminum':
-                    helpText = "Check this box if you recycle aluminum and tin regularly. Recycling these materials helps conserve resources and reduce environmental impact.";
-                    break;
-                default:
-                    helpText = "No help available for this field.";
-                    break;
-            }
-
-            // Process field id to change to more readable words for user. e.g., from recycle_aluminum -> Recycle Aluminum
-            fieldId = fieldId.split('_');
-            for (let i = 0; i < fieldId.length; i++) {
-                fieldId[i] = fieldId[i].charAt(0).toUpperCase() + fieldId[i].slice(1);
-            }
-            fieldId = fieldId.join(' ');
-
-            alert(fieldId + "? " + helpText);
-        }
-    </script>
 </body>
 </html>
